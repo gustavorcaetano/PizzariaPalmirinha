@@ -1,0 +1,18 @@
+create database bdvendapizza;
+
+use bdvendapizza;
+
+create table tbprodutos(
+prod_nome varchar(80),
+prod_descricao varchar(80),
+prod_preco varchar(80),
+prod_foto varchar(100)
+);
+
+create table tbvendedores(
+ven_nome varchar(90) primary key,
+ven_senha varchar(90),
+ven_cpf varchar(11)
+);
+
+insert into tbprodutos(prod_nome,prod_descricao,prod_preco,prod_disponibilidade,prod_foto) values('pizza de mussarela','deliciosa','40,00','Disponível','fundoheader.png');
