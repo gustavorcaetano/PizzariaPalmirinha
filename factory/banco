@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS tbprodutos;
+
+CREATE TABLE tbprodutos (
+    prod_id INT AUTO_INCREMENT PRIMARY KEY, -- Importante ter um ID
+    prod_nome VARCHAR(80),
+    prod_descricao VARCHAR(255), -- Aumentei para caber descrições maiores
+    prod_preco VARCHAR(80),
+    prod_disponibilidade VARCHAR(20), -- Adicionei a coluna que faltava
+    prod_foto VARCHAR(100)
+);
+
+CREATE TABLE tbvendedores (
+    ven_nome VARCHAR(90) PRIMARY KEY,
+    ven_senha VARCHAR(90),
+    ven_cpf VARCHAR(11)
+);
+
+-- Agora o INSERT vai funcionar:
+INSERT INTO tbprodutos (prod_nome, prod_descricao, prod_preco, prod_disponibilidade, prod_foto) 
+VALUES ('Pizza de Mussarela', 'Deliciosa pizza com queijo mussarela de primeira', '40,00', 'Disponível', 'fundoheader.png');

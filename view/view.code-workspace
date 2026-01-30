@@ -1,0 +1,33 @@
+{
+  "folders": [
+	{
+		"name": "view",
+		"path": "../../../Downloads/view"
+	},
+	{
+		"name": "pizzapalmirinha",
+		"path": ".."
+	},
+	{
+		"name": "model",
+		"path": "../../../Downloads/model"
+	},
+	{
+		"name": "img",
+		"path": "../../../Downloads/img"
+	},
+	{
+		"name": "factory",
+		"path": "../../../Downloads/factory"
+	},
+	{
+		"name": "efeito",
+		"path": "../../../Downloads/efeito"
+	},
+	{
+		"name": "css",
+		"path": "../../../Downloads/css"
+	}
+],
+  "settings": {}
+}
