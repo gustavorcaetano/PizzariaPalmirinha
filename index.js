@@ -53,3 +53,26 @@ window.addEventListener('resize', atualizarRoleta);
 document.addEventListener('DOMContentLoaded', () => {
     atualizarRoleta();
 });
+
+
+// Funções do modal de detalhes da pizza
+function abrirModal(nome, desc, preco, img) {
+    document.getElementById('modal-pizza-nome').innerText = nome;
+    document.getElementById('modal-pizza-descricao').innerText = desc;
+    document.getElementById('modal-pizza-preco').innerText = "A partir de R$ " + preco;
+    document.getElementById('modal-pizza-img').src = img;
+    
+    document.getElementById('modal-detalhes').style.display = "block";
+}
+
+function fecharModal() {
+    document.getElementById('modal-detalhes').style.display = "none";
+}
+
+// Fechar se clicar fora da caixa branca
+window.onclick = function(event) {
+    let modal = document.getElementById('modal-detalhes');
+    if (event.target == modal) {
+        fecharModal();
+    }
+}

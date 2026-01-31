@@ -80,29 +80,30 @@
                 $resultado->execute();
 
                while ($cont = $resultado->fetch(PDO::FETCH_ASSOC)) {
-    echo "<div class='card-hut'>";
-        // Lado Esquerdo: Conteúdo
-        echo "<div class='card-hut-content'>";
-            echo "<div class='card-hut-header'>";
-                echo "<h3>" . htmlspecialchars($cont['prod_nome']) . "</h3>";
-                echo "<p class='descricao'>Aproveite! " . htmlspecialchars($cont['prod_nome']) . " com ingredientes selecionados e massa fresquinha.</p>";
-            echo "</div>";
-            
-            echo "<div class='card-hut-footer'>";
-                echo "<p class='preco-tag'>A partir de <br> <strong>R$ " . number_format($cont['prod_preco'], 2, ',', '.') . "</strong></p>";
-                echo "<div class='acoes'>";
-                    echo "<button class='btn-detalhes'>Detalhes</button>";
-                    echo "<button class='btn-adicionar'>Adicionar</button>";
-                echo "</div>";
-            echo "</div>";
-        echo "</div>";
+                echo "<div class='card-hut'>";
+                    // Lado Esquerdo: Conteúdo
+                    echo "<div class='card-hut-content'>";
+                        echo "<div class='card-hut-header'>";
+                            echo "<h3>" . htmlspecialchars($cont['prod_nome']) . "</h3>";
+                            echo "<p class='descricao'>Aproveite! " . htmlspecialchars($cont['prod_nome']) . " com ingredientes selecionados e massa fresquinha.</p>";
+                        echo "</div>";
+                        
+                        echo "<div class='card-hut-footer'>";
+                            echo "<p class='preco-tag'>A partir de <br> <strong>R$ " . number_format($cont['prod_preco'], 2, ',', '.') . "</strong></p>";
+                            echo "<div class='acoes'>";
+                                // BOTÃO DE DETALHES CORRIGIDO:
+                                echo "<button class='btn-detalhes' onclick=\"abrirModal('" . addslashes($cont['prod_nome']) . "', 'Aproveite nossa deliciosa pizza de " . addslashes($cont['prod_nome']) . "', '" . number_format($cont['prod_preco'], 2, ',', '.') . "', 'img/" . $cont['prod_foto'] . "')\">Detalhes</button>";
+                                echo "<button class='btn-adicionar'>Adicionar</button>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</div>";
 
-        // Lado Direito: Imagem
-        echo "<div class='card-hut-thumb'>";
-            echo "<img src='img/" . htmlspecialchars($cont['prod_foto']) . "' alt='Pizza'>";
-        echo "</div>";
-    echo "</div>";
-}
+                    // Lado Direito: Imagem
+                    echo "<div class='card-hut-thumb'>";
+                        echo "<img src='img/" . htmlspecialchars($cont['prod_foto']) . "' alt='Pizza'>";
+                    echo "</div>";
+                echo "</div>";
+            }
             ?>
         </div>
     </section>
@@ -135,6 +136,25 @@
             </p>
         </div>
     </footer>
+
+
+    <!-- Modal -->
+    <div id="modal-detalhes" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="modal-pizza-img" src="" alt="Pizza">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-pizza-nome">Nome da Pizza</h2>
+                    <p id="modal-pizza-descricao">Descrição detalhada aqui...</p>
+                    <span class="modal-preco" id="modal-pizza-preco">R$ 00,00</span>
+                    <button class="btn-adicionar-modal">Adicionar ao Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./index.js"></script>
 </body>
