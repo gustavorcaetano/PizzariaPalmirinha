@@ -1,0 +1,626 @@
+/* ========================================================= */
+/* ESTILOS GERAIS E VITRINE PRINCIPAL */
+/* ========================================================= */
+
+/* Isso remove as bordas brancas que o navegador cria por padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    /* IMPORTANTE: O comando abaixo garante o scroll vertical */
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    background-color: hsl(20, 96%, 89%);
+}
+h1{
+    text-transform: uppercase;
+}
+
+#vitrine {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
+
+/* HEADER OCUPANDO TUDO */
+header {
+    /* Ajuste o caminho da imagem se necessário */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../img/fundoheader.png') center/cover no-repeat !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important; /* Faz a imagem "dar um zoom" até preencher tudo */
+    background-attachment: fixed; /* Opcional: dá um efeito de profundidade legal */
+    position: relative !important;
+    width: 100% !important; /* Largura total */
+    min-height: 100vh !important;
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, Nav na direita */
+    align-items: flex-start; /* Alinha no topo para o nav não esticar */
+    overflow: hidden !important;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+    /* Adicione sua imagem de fundo aqui se o vídeo falhar */
+    
+}
+#bgvideo {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    /* Usamos min-width e min-height para garantir que ele nunca seja menor que o header */
+    min-width: 100% !important; 
+    min-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    /* Centraliza e dá um pequeno zoom de 10% para eliminar bordas de renderização */
+    transform: translate(-50%, -50%) scale(1.1) !important;    
+    object-fit: cover !important;
+    mix-blend-mode: screen !important;
+    z-index: 1 !important;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+    pointer-events: none;
+}
+/* Garante que o texto e logo fiquem NA FRENTE das faíscas */
+#logopalmirinha, header nav, #textoheader {
+    z-index: 10;
+    position: relative;
+}
+
+/* Garante que o nav não ocupe altura total */
+/* NAVEGAÇÃO COMPACTA */
+header nav {
+    margin-top: 30px;
+    margin-right: 40px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: 0.3s;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05); /* Fundo quase invisível */
+}
+
+header nav a:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#logopalmirinha {
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 100px;
+    height: 120px;
+    z-index: 10;
+}
+
+#textoheader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: white;
+    width: 90%;
+    z-index: 1;
+}
+
+#textoheader h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#textoheader a {
+    text-decoration: none;
+    padding: 15px 30px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 40px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+#textoheader a:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ========================================================= */
+/* CARDÁPIO (ESTILO PIZZA HUT) */
+/* ========================================================= */
+
+#cardapio {
+    padding: 60px 20px;
+    background-color: #fff8f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cardapio-total{
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff4000;
+    font-size: 2.5rem;
+    margin-bottom: 50px
+}
+
+#cardapio h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ff4000;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.card-hut {
+    background: #fff;
+    border-radius: 20px;
+    display: flex; /* Alinha conteúdo e imagem lado a lado */
+    width: 480px;
+    height: 250px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card-hut:hover {
+    transform: translateY(-5px);
+}
+
+.card-hut-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-hut-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.descricao {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.preco-tag strong {
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-detalhes, .btn-adicionar {
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.btn-adicionar {
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+.card-hut-thumb {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.card-hut-thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.card-hut-header h3{
+    color: #ff4000;
+    text-transform: uppercase;
+    word-spacing: 2px;
+}
+.preco-tag{
+    color: #333;
+}
+.preco-tag strong{
+    color: #ff4000;
+}
+
+/* ========================================================= */
+/* ROLETA E SELETOR */
+/* ========================================================= */
+
+.seletor-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto 30px auto; /* Centraliza o seletor na página */
+  padding: 40px; /* Reduzi um pouco para melhorar o respiro */
+  background: linear-gradient(135deg, #fff8f2 0%, #ffece0 100%);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  width: 90%;
+  max-width: 2000px;
+  box-sizing: border-box;
+}
+
+/* Dica: Adicione um Media Query para telas pequenas */
+@media (max-width: 768px) {
+  .seletor-menu {
+    padding: 20px;
+    flex-direction: column; /* Empilha os itens se o menu for grande */
+  }
+}
+
+.roleta-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    overflow: visible; /* Importante para as imagens laterais aparecerem */
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+.roleta {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    align-items: center;
+    will-change: transform;
+}
+
+
+.img-item {
+    flex: 0 0 400px; /* Largura base de cada item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease;
+    filter: blur(2px); /* Desfoque leve nas laterais */
+    opacity: 0.4;
+    transform: scale(0.7); /* Menores por padrão */
+    filter: grayscale(40%); /* Deixa as pizzas laterais menos saturadas */
+}
+/* IMAGEM CENTRAL (ATIVO) */
+.img-item.ativo {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.1); /* Destaque maior */
+    z-index: 10;
+}
+
+/* IMAGENS VIZINHAS (LATERAIS) */
+.img-item.lateral {
+    opacity: 0.7;
+    transform: scale(0.85);
+    filter: blur(1px);
+}
+
+.img-item img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: contain;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Legendas na Roleta */
+/* LEGENDA (NOME E PREÇO) */
+.legenda {
+    margin-top: -20px; /* Faz a legenda subir um pouco sobre a foto */
+    background: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 80%;
+}
+
+.legenda h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.legenda p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #ff4000;
+    font-size: 0.9rem;
+}
+
+/* Imagem ativa (central) */
+.img-item.ativo img {
+  width: 320px;
+  height: 320px;
+  border: 4px solid #ff6b35; /* Corrigido: border-color precisa de border-style para aparecer */
+  transform: scale(1.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  position: relative; /* Garante que o z-index funcione corretamente */
+  transition: all 0.4s ease; /* Adicionado: para o aumento de escala ser suave */
+}
+
+/* Imagem ativa (central) */
+.img-item.ativo img {
+  width: 320px;
+  height: 320px;
+  border: 4px solid #ff6b35; /* Adicionado solid para a borda aparecer */
+  transform: scale(1.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transição suave */
+}
+
+.img-item.ativo .legenda {
+  background: rgba(255, 107, 53, 0.98);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 1; /* Garante que apareça */
+}
+
+.img-item.ativo .legenda h3 {
+  color: white;
+  font-size: 1.6rem; /* Aumentado para destaque */
+  margin-bottom: 5px;
+}
+
+.img-item.ativo .legenda p {
+  color: white;
+  font-size: 1.1rem; /* Diminuído para hierarquia correta */
+  line-height: 1.4;
+}
+
+/* Imagens laterais */
+.img-item.lateral img {
+  opacity: 0.65;
+  transform: scale(0.88);
+  filter: grayscale(30%); /* Dica: um leve cinza ajuda a destacar a central */
+  transition: all 0.4s ease;
+}
+
+.img-item.lateral .legenda {
+  opacity: 0.5; /* Reduzi um pouco mais para dar foco à ativa */
+  transform: scale(0.9);
+}
+/* Botões de navegação */
+/* ESTILIZAÇÃO DOS BOTÕES */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #ff6b35;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    z-index: 20;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-in-out; /* Transição rápida para o clique */
+}
+
+.btn:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+.btn-prev { left: 50px; }
+.btn-next { right: 50px; }
+/* Estado normal do botão */
+/* Efeito de clique */
+.btn:active {
+  transform: scale(0.95); /* 0.95 dá uma sensação de clique mais tátil que 0.98 */
+  filter: brightness(0.9); /* Escurece levemente o botão ao clicar */
+}
+.btn-detalhes{
+    background-color: #ffdbbb;
+    color: #ff4000;
+    border: solid 2px #ff4000;
+}
+.btn-adicionar{
+    background-color: #ff4000;
+    color: #ffdbbb;
+    border: solid 2px #ffdbbb;
+}
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+
+#contato {
+  background-color: #1a1a1a; /* Um preto menos agressivo */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Coloca os itens um embaixo do outro se houver mais de um */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* Uso de rem para melhor acessibilidade */
+  padding: 30px 15px; /* Aumentei o respiro vertical */
+  text-align: center;
+  border-top: 3px solid #ff6b35; /* Uma linha fina com a cor da sua pizza (laranja) */
+}
+
+/* Se houver links (como telefone ou redes sociais) dentro do contato */
+#contato a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+#contato a:hover {
+  opacity: 0.8;
+}  
+
+
+
+/* ========================================================= */
+/* MODAL */
+/* ========================================================= */
+
+/* Fundo do Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+/* Caixa do Modal */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 70%;
+    max-width: 800px;
+    position: relative;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-img img {
+    width: 300px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    object-fit: contain;
+}
+
+.modal-info h2 { color: #ff6b35; margin-bottom: 15px; }
+.modal-preco { display: block; font-size: 24px; font-weight: bold; margin: 20px 0; color: #333; }
+
+.btn-adicionar-modal {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ========================================================= */
+/* RESPONSIVIDADE (MOBILE) */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header nav {
+        margin: 20px 0;
+        flex-direction: row;
+    }
+
+    #logopalmirinha {
+        margin-left: 0;
+        width: 150px;
+    }
+
+    #textoheader h1 {
+        font-size: 2rem;
+    }
+
+    .card-hut {
+        flex-direction: column; /* No celular a imagem fica embaixo */
+        width: 100%;
+        height: auto;
+    }
+
+    .card-hut-thumb {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card-hut-thumb img {
+        width: 200px;
+    }
+}
