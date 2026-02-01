@@ -1,0 +1,6 @@
+# Força o GitHub a reconhecer arquivos que ele pensa ser Hack como PHP
+*.php linguist-language=php
+
+# Se você tiver pastas de bibliotecas ou arquivos JSON que estão sujando o gráfico, você pode ignorá-los:
+# vendor/* linguist-vendored
+# *.json linguist-generated
