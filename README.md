@@ -47,5 +47,5 @@ A **Pizzaria Palmirinha** é um site completo com cardápio digital e ambiente i
 
 ---
 
-## 📄 LICENÇA
+##  LICENÇA
 Projeto educacional, não comercial. O uso da imagem da "Palmirinha" é ilustrativo.
