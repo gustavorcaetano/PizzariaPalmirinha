@@ -15,37 +15,37 @@
 
 ---
 
-## 📝 Sobre o Projeto
+## SOBRE O PROJETO
 A **Pizzaria Palmirinha** é um site completo com cardápio digital e ambiente inspirado em comida caseira. O sistema conta com áreas distintas para administradores e vendedores, permitindo a gestão total do negócio.
 
-## 🎯 Objetivos e Identidade
+## OBJETIVOS E IDENTIDADE
 * **Conceito de "Comida de Vó":** Uso de tons quentes como laranja e marrom para criar uma atmosfera de forno a lenha.
 * **Domínio Técnico:** Demonstrar habilidades em desenvolvimento Front-End, Back-End e modelagem de banco de dados com MySQL.
 * **Portfólio Profissional:** Criado para simular um site real de pizzaria com design único e foco em pequenos negócios.
 
-##  Por que cada tecnologia foi usada?
+##  POR QUE CADA TECNOLOGIA OFI USADA
 * **HTML5 e CSS3:** Para garantir uma estrutura semântica e um layout responsivo que se adapta a diferentes telas.
 * **JavaScript:** Utilizado para elementos dinâmicos, como o carrossel de pizzas e interações na Home Page.
 * **PHP:** Responsável por toda a lógica do servidor, processando o cadastro e a exibição das pizzas.
 * **MySQL:** Banco de dados robusto para armazenar os sabores, preços e descrições detalhadas inseridas no painel.
 
-##  Dificuldades e Alternativas
+##  DIFICULDADES E ALTERNATIVAS
 * **Integração do Banco de Dados:** Configurar a comunicação entre o formulário PHP e o MySQL foi um desafio inicial.
   * *Solução:* Foi criada uma estrutura de CRUD sólida para garantir que cada pizza cadastrada fosse refletida instantaneamente no cardápio.
 * **Hospedagem Gratuita:** Lidar com as limitações da InfinityFree.
   * *Solução:* Otimização do código e das consultas SQL para manter o site rápido mesmo em servidores compartilhados.
 
-##  Resultados Alcançados
+##  RESULTADOS ALCANÇADOS
 * **Painel Administrativo:** Interface funcional para cadastrar, editar e excluir pizzas.
 * **Cardápio Dinâmico:** Exibição automatizada de imagens e descrições vindas do banco de dados.
 * **Identidade Visual:** Site com visual acolhedor e profissional, pronto para apresentação.
 
 ---
 
-##  Autor
+##  AUTOR
 **Gustavo Ramos Caetano** Estudante do IFSP Guarulhos.
 
 ---
 
-## 📄 Licença
+## 📄 LICENÇA
 Projeto educacional, não comercial. O uso da imagem da "Palmirinha" é ilustrativo.
